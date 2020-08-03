@@ -27,6 +27,7 @@ for i in range(0,4307):
 
         ls.insert(i,x)
         ls1.insert(i,y)
+        a=len(ls1)
         #plt.plot(x,y)
         #plt.show()
 
@@ -34,9 +35,17 @@ for i in range(0,4307):
         KeyboardInterrupt
 #print(ls)
 #print("end")
-
-plt.plot(ls,ls1)
-plt.show()
+option=input("Enter whether you want a graph or the latest number")
+if option=='graph':
+    plt.plot(ls,ls1)
+    plt.show()
+    
+elif option=='latest number':
+    import pyttsx3
+    engine = pyttsx3.init()
+        
+    engine.say(ls1[a-1])
+    engine.runAndWait()  
 
 
 
